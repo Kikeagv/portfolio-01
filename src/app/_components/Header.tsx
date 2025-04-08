@@ -24,13 +24,24 @@ export function Header() {
 
       {/* Navigation Links - Replaced mt-auto with mt-6 for mobile */}
       <nav className="mt-6 md:mt-2">
-        {/* Mobile Layout: Changed to 2 columns */}
+        {/* Mobile Layout: Changed to 2 columns, added animations */}
         <ul className="grid grid-cols-2 gap-x-4 gap-y-2 md:hidden">
           {navItems.map((item) => (
             <li key={item.name}>
-              <Link href={item.href} className="flex items-center gap-1 text-sm hover:underline">
-                <span>→</span>
+              {/* Added group, relative, overflow-hidden, py-1 and removed hover:underline */}
+              <Link
+                href={item.href}
+                className="group relative flex items-center gap-1 text-sm py-1 overflow-hidden"
+              >
+                {/* Added animation classes to arrow span */}
+                <span className="inline-block transition-transform duration-300 ease-out group-hover:-translate-y-1 group-hover:rotate-[-45deg]">
+                  →
+                </span>
                 <span>{item.name}</span>
+                {/* Added underline span */}
+                <span
+                  className="absolute bottom-0 left-0 h-[1px] w-full origin-left scale-x-0 transform bg-white transition-transform duration-300 ease-out group-hover:scale-x-100"
+                ></span>
               </Link>
             </li>
           ))}
