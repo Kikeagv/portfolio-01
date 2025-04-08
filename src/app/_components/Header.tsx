@@ -10,10 +10,10 @@ export function Header() {
   ];
 
   return (
-    <header className="bg-black text-white text-base flex flex-col min-h-screen md:min-h-0 p-8 rounded-lg">
+    <header className="bg-black text-white text-base flex flex-col p-4 md:p-8 rounded-lg">
       {/* Top section: Title and Design Box */}
-      <div className="mb-6 md:mb-8">
-        <h1 className="text-4xl md:text-6xl font-light mb-4">
+      <div className="md:mb-8">
+        <h1 className="text-4xl md:text-6xl font-light">
           Hello I&apos;m <br className="md:hidden" /> Enrique García <br className="md:hidden" /> and I
         </h1>
         <div className="inline-block bg-white text-black px-4 py-2 rounded-lg">
@@ -22,13 +22,13 @@ export function Header() {
         </div>
       </div>
 
-      {/* Navigation Links - Adjusted for responsiveness and hover effects */}
-      <nav className="mt-auto md:mt-2">
-        {/* Mobile Layout: Horizontal row */}
-        <ul className="flex flex-row flex-wrap gap-x-4 gap-y-2 md:hidden">
+      {/* Navigation Links - Replaced mt-auto with mt-6 for mobile */}
+      <nav className="mt-6 md:mt-2">
+        {/* Mobile Layout: Changed to 2 columns */}
+        <ul className="grid grid-cols-2 gap-x-4 gap-y-2 md:hidden">
           {navItems.map((item) => (
             <li key={item.name}>
-              <Link href={item.href} className="flex items-center gap-1 hover:underline">
+              <Link href={item.href} className="flex items-center gap-1 text-sm hover:underline">
                 <span>→</span>
                 <span>{item.name}</span>
               </Link>

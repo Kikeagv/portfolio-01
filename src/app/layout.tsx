@@ -23,7 +23,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${albert.variable}`} style={{ fontFamily: 'var(--font-albert-sans)' }}>
-      <body className="bg-white p-16 text-black">
+      <body className="bg-white p-4 text-black md:p-16">
         <TRPCReactProvider>
           <Header />
           <main>{children}</main>
